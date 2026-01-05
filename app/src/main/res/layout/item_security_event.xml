@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SS7 Guardian - Security Event List Item
+  =========================================
+  
+  RecyclerView item layout for displaying security events.
+  Shows:
+  - Threat level indicator (colored circle)
+  - Event title and description
+  - Timestamp
+  - Dismiss action
+  
+  @author SS7 Guardian Team
+  @since 0.1.0
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardEvent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <!-- ============================================================
+             Threat Level Indicator - Colored circle showing severity
+             ============================================================ -->
+        <View
+            android:id="@+id/viewThreatIndicator"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/circle_indicator"
+            tools:backgroundTint="@color/status_medium" />
+
+        <!-- ============================================================
+             Event Content - Title, description, time
+             ============================================================ -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical">
+
+            <!-- Event Title -->
+            <TextView
+                android:id="@+id/tvEventTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_light"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Unknown Cell Tower" />
+
+            <!-- Event Description -->
+            <TextView
+                android:id="@+id/tvEventDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary_light"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="Connected to unknown tower CID:12345 LAC:6789" />
+
+            <!-- Timestamp -->
+            <TextView
+                android:id="@+id/tvEventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="10sp"
+                android:textColor="@color/text_secondary_light"
+                tools:text="2 minutes ago" />
+
+        </LinearLayout>
+
+        <!-- ============================================================
+             Dismiss Button - Allows user to acknowledge event
+             ============================================================ -->
+        <ImageButton
+            android:id="@+id/btnDismiss"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Dismiss event"
+            app:tint="@color/text_secondary_light" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

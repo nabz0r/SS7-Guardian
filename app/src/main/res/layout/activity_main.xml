@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SS7 Guardian - Main Activity Layout
+  =====================================
+  
+  Primary dashboard showing:
+  - Protection status indicator
+  - Current threat level
+  - Start/Stop toggle button
+  - Recent security events list
+  
+  Layout Structure:
+  - CoordinatorLayout for proper Material behavior
+  - AppBarLayout with collapsing toolbar
+  - NestedScrollView for scrollable content
+  - CardViews for organized sections
+  
+  @author SS7 Guardian Team
+  @since 0.1.0
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".ui.MainActivity">
+
+    <!-- ================================================================
+         App Bar with Title
+         ================================================================ -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.SS7Guardian">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:title="@string/app_name"
+            app:titleTextColor="@android:color/white"
+            app:navigationIcon="@drawable/ic_shield" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ================================================================
+         Main Content - Scrollable
+         ================================================================ -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ============================================================
+                 Status Card - Shows current protection status
+                 ============================================================ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+
+                    <!-- Shield Icon - Changes color based on status -->
+                    <ImageView
+                        android:id="@+id/ivShieldStatus"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_shield"
+                        android:contentDescription="@string/status_stopped"
+                        app:tint="@color/status_safe" />
+
+                    <!-- Status Text -->
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/status_stopped"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary_light" />
+
+                    <!-- Threat Level Indicator -->
+                    <TextView
+                        android:id="@+id/tvThreatLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="🟢 Safe"
+                        android:textSize="24sp"
+                        android:textColor="@color/status_safe" />
+
+                    <!-- Tower Count -->
+                    <TextView
+                        android:id="@+id/tvTowerCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Known towers: 0"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary_light" />
+
+                    <!-- Start/Stop Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnToggleProtection"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/btn_start_protection"
+                        android:textSize="16sp"
+                        app:cornerRadius="8dp"
+                        app:backgroundTint="@color/primary" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================================
+                 Network Info Card - Current network status
+                 ============================================================ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardNetwork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Network Status"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary_light" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp">
+
+                        <!-- Network Type -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvNetworkType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4G LTE"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/network_4g" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Network Type"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary_light" />
+
+                        </LinearLayout>
+
+                        <!-- Signal Strength -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvSignalStrength"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-75 dBm"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary_light" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Signal"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary_light" />
+
+                        </LinearLayout>
+
+                        <!-- Cell ID -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvCellId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary_light" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cell ID"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary_light" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================================
+                 Events Card - Recent security events
+                 ============================================================ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardEvents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recent_events_header"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary_light" />
+
+                    <!-- Events will be displayed here -->
+                    <TextView
+                        android:id="@+id/tvEvents"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/no_events"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary_light"
+                        android:lineSpacingMultiplier="1.4" />
+
+                    <!-- RecyclerView for events (future improvement) -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvEvents"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        tools:listitem="@layout/item_security_event"
+                        tools:itemCount="3" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

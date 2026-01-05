@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Circle Indicator Drawable
+  ==========================
+  
+  Simple circular shape used for threat level indicators.
+  The fill color is set programmatically based on threat level.
+  
+  Usage: Set android:backgroundTint in code or XML
+  
+  @author SS7 Guardian Team
+  @since 0.1.0
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    
+    <!-- Default fill color (will be overridden) -->
+    <solid android:color="@color/status_safe" />
+    
+    <!-- Ensure it's a perfect circle -->
+    <size
+        android:width="12dp"
+        android:height="12dp" />
+        
+</shape>
