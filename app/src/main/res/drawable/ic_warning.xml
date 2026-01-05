@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Warning Icon - Used for security alert notifications
+  SVG path for a triangular warning sign with exclamation mark
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorError">
+    
+    <!-- Triangle background -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M1,21h22L12,2L1,21z" />
+    
+    <!-- Exclamation mark dot -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M12,18c-0.55,0 -1,-0.45 -1,-1s0.45,-1 1,-1s1,0.45 1,1S12.55,18 12,18z" />
+    
+    <!-- Exclamation mark line -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M11,10h2v4h-2z" />
+</vector>

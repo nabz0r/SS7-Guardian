@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SS7 Guardian - Theme Definitions
+  =================================
+  Material 3 themes for light and dark mode.
+  
+  The app uses a security-focused color scheme:
+  - Primary: Deep blue (trust, security)
+  - Secondary: Teal (technology, alertness)
+  - Error: Red (threat indication)
+-->
+<resources>
+    <!-- Base light theme -->
+    <style name="Theme.SS7Guardian" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        
+        <!-- Background and surface -->
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/surface_light</item>
+        <item name="colorOnSurface">@color/text_primary_light</item>
+        
+        <!-- Error color (used for critical threats) -->
+        <item name="colorError">@color/status_critical</item>
+        <item name="colorOnError">#FFFFFF</item>
+        
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/primary_variant</item>
+        <item name="android:navigationBarColor">@color/surface_light</item>
+    </style>
+    
+    <!-- Splash screen theme (optional for Android 12+) -->
+    <style name="Theme.SS7Guardian.Splash" parent="Theme.SS7Guardian">
+        <item name="android:windowBackground">@color/primary</item>
+    </style>
+</resources>

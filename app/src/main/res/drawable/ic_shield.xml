@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shield Icon - Used for app branding and protected status
+  SVG path for a shield with checkmark
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/primary">
+    
+    <!-- Shield outline -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,1L3,5v6c0,5.55 3.84,10.74 9,12c5.16,-1.26 9,-6.45 9,-12V5L12,1z" />
+    
+    <!-- Checkmark inside shield -->
+    <path
+        android:fillColor="@color/status_safe"
+        android:pathData="M10,17l-4,-4l1.41,-1.41L10,14.17l6.59,-6.59L18,9L10,17z" />
+</vector>

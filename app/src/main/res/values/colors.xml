@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SS7 Guardian - Color Definitions
+  =================================
+  Colors used throughout the app, especially for threat level indicators.
+  
+  Color scheme follows traffic light convention:
+  - Green: Safe / No threat
+  - Yellow: Low concern
+  - Orange: Medium alert
+  - Red: High danger
+  - Dark Red: Critical threat
+-->
+<resources>
+    <!-- Primary brand colors -->
+    <color name="primary">#1565C0</color>
+    <color name="primary_variant">#0D47A1</color>
+    <color name="secondary">#26A69A</color>
+    <color name="secondary_variant">#00897B</color>
+    
+    <!-- Background colors -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface_dark">#1E1E1E</color>
+    
+    <!-- Text colors -->
+    <color name="text_primary_light">#212121</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_light">#757575</color>
+    <color name="text_secondary_dark">#B0B0B0</color>
+    
+    <!-- Threat level colors - used by AlertManager and UI -->
+    <!-- Level 0: Safe - No anomalies detected -->
+    <color name="status_safe">#4CAF50</color>
+    
+    <!-- Level 1: Low - Minor anomaly, probably nothing -->
+    <color name="status_low">#FFEB3B</color>
+    
+    <!-- Level 2: Medium - Multiple indicators, pay attention -->
+    <color name="status_medium">#FF9800</color>
+    
+    <!-- Level 3: High - Strong attack indicators -->
+    <color name="status_high">#F44336</color>
+    
+    <!-- Level 4+: Critical - Active attack likely -->
+    <color name="status_critical">#B71C1C</color>
+    
+    <!-- Network type indicator colors -->
+    <color name="network_5g">#2196F3</color>
+    <color name="network_4g">#4CAF50</color>
+    <color name="network_3g">#FF9800</color>
+    <color name="network_2g">#F44336</color>
+    <color name="network_unknown">#9E9E9E</color>
+    
+    <!-- Card and container colors -->
+    <color name="card_background_light">#FFFFFF</color>
+    <color name="card_background_dark">#2D2D2D</color>
+    <color name="divider_light">#E0E0E0</color>
+    <color name="divider_dark">#424242</color>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cell Tower Icon - Used for cell tower related UI elements
+  Represents cellular network infrastructure
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorPrimary">
+    
+    <!-- Tower structure -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M17.71,7.71L12,2L6.29,7.71c-0.39,0.39 -0.39,1.02 0,1.41l0.71,0.71L12,4.83l5,5l0.71,-0.71c0.38,-0.39 0.38,-1.02 0,-1.41z" />
+    
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,6.83l-4.59,4.58c-0.39,0.39 -0.39,1.02 0,1.41l0.71,0.71L12,9.83l3.88,3.88l0.71,-0.71c0.39,-0.39 0.39,-1.02 0,-1.41L12,6.83z" />
+    
+    <!-- Signal indicator dot -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,17m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+    
+    <!-- Tower base -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M11,19h2v3h-2z" />
+</vector>

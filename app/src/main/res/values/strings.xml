@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SS7 Guardian - String Resources
+  ================================
+  All user-facing strings for internationalization support.
+  
+  Structure:
+  - App identity
+  - Main UI strings
+  - Notification strings
+  - Threat descriptions
+  - Settings labels
+  - Error messages
+-->
+<resources>
+    <!-- App identity -->
+    <string name="app_name">SS7 Guardian</string>
+    <string name="app_name_full">SS7 Guardian - Cellular Security Monitor</string>
+    
+    <!-- Main activity UI -->
+    <string name="status_stopped">Status: Stopped</string>
+    <string name="status_monitoring">Status: 🟢 Monitoring</string>
+    <string name="status_alert">Status: ⚠️ Alert Active</string>
+    <string name="btn_start_protection">Start Protection</string>
+    <string name="btn_stop_protection">Stop Protection</string>
+    <string name="recent_events_header">Recent Events:</string>
+    <string name="no_events">No security events recorded</string>
+    
+    <!-- Notification channels -->
+    <string name="channel_service_name">Guardian Service</string>
+    <string name="channel_service_desc">Background monitoring notification</string>
+    <string name="channel_alerts_name">Security Alerts</string>
+    <string name="channel_alerts_desc">Critical security alert notifications</string>
+    
+    <!-- Service notifications -->
+    <string name="notif_service_title">SS7 Guardian Active</string>
+    <string name="notif_service_text">Monitoring cellular network security</string>
+    
+    <!-- Threat level names -->
+    <string name="threat_level_safe">Safe</string>
+    <string name="threat_level_low">Low</string>
+    <string name="threat_level_medium">Medium</string>
+    <string name="threat_level_high">High</string>
+    <string name="threat_level_critical">Critical</string>
+    
+    <!-- Event type titles -->
+    <string name="event_2g_downgrade">2G Downgrade Detected</string>
+    <string name="event_unknown_tower">Unknown Cell Tower</string>
+    <string name="event_silent_sms_class0">Class 0 SMS Detected</string>
+    <string name="event_silent_sms_type0">Silent SMS Detected</string>
+    <string name="event_wap_push">WAP Push Received</string>
+    <string name="event_signal_anomaly">Signal Anomaly</string>
+    <string name="event_rapid_cell_change">Rapid Cell Changes</string>
+    
+    <!-- Event descriptions -->
+    <string name="desc_2g_downgrade">Network downgraded from %1$s to 2G. This could indicate a downgrade attack.</string>
+    <string name="desc_unknown_tower">Connected to unknown tower CID:%1$d LAC:%2$d. This tower is not in your trusted database.</string>
+    <string name="desc_signal_anomaly">Signal strength changed from %1$d dBm to %2$d dBm. Large jumps may indicate IMSI catcher.</string>
+    <string name="desc_rapid_cell_change">Detected %1$d cell changes in %2$d seconds. May indicate forced handoffs.</string>
+    
+    <!-- Permissions -->
+    <string name="permission_rationale_location">Location permission is needed to identify cell towers and detect IMSI catchers.</string>
+    <string name="permission_rationale_phone">Phone state permission is needed to monitor network type changes.</string>
+    <string name="permission_rationale_sms">SMS permission is needed to detect silent SMS attacks.</string>
+    <string name="permissions_required">Permissions required for protection</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_autostart">Auto-start on boot</string>
+    <string name="settings_sensitivity">Detection sensitivity</string>
+    <string name="settings_sensitivity_low">Low (fewer false positives)</string>
+    <string name="settings_sensitivity_medium">Medium (balanced)</string>
+    <string name="settings_sensitivity_high">High (more sensitive)</string>
+    <string name="settings_disable_2g">Block 2G connections (Android 12+)</string>
+    <string name="settings_export_logs">Export event logs</string>
+    
+    <!-- Error messages -->
+    <string name="error_permissions_denied">Cannot monitor without required permissions</string>
+    <string name="error_service_start_failed">Failed to start monitoring service</string>
+    <string name="error_database_access">Error accessing security database</string>
+</resources>
